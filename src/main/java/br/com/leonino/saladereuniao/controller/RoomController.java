@@ -46,12 +46,19 @@ public class RoomController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Room> getRoomById(@PathVariable("id") Long id, @Valid @RequestBody Room room) throws ResourceNotFoundException {
+    public ResponseEntity<Room> updateRoomById(@PathVariable("id") Long id, @Valid @RequestBody Room room) throws ResourceNotFoundException {
         Room roomToUpdate = roomRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Room not found"+ id));
         room.setId(id);
         Room roomUpdated = roomRepository.save(room);
 
         return ResponseEntity.ok().body(roomUpdated);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteRoomById(@PathVariable("id") Long id) throws ResourceNotFoundException {
+        Room roomToDelete = roomRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Room not found"+ id));
+        roomRepository.delete(roomToDelete);
     }
 
 }
