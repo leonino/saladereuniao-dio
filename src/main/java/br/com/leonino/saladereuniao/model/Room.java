@@ -7,9 +7,11 @@ import java.io.Serializable;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="meetingroom")
-public class Room implements Serializable {
+public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
