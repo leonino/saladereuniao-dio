@@ -24,8 +24,8 @@ public class Room {
     private String date;
 
     @Column(nullable = false)
-    private String starthour;
+    private String startHour;
 
     @Column(nullable = false)
-    private String endhour;
+    private String endHour;
 }
