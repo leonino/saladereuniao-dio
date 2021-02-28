@@ -13,6 +13,7 @@ localhost:8080/api/v1/rooms
 
 ## Aplicativo Front-End
 
-[Aplicativo Desenvolvido em Angular](https://github.com/leonino/saladereuniao-dio)
+[Aplicativo Desenvolvido em Angular](https://github.com/leonino/frontEnd-sala-reuniao-angular)
 
 ### Desenvolvido como parte do BootCamp Java Developer
+
